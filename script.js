@@ -26,7 +26,7 @@ function createGrid(gridSize) {
     tile.style.height = `${tileSize}px`;
 
     tile.addEventListener("mouseenter", () => {
-      tile.classList.add("colored");
+      tile.style.backgroundColor = getRandomColor();
     });
 
     container.appendChild(tile);
@@ -49,6 +49,6 @@ resizeBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
   const tiles = document.querySelectorAll(".tile");
-  tiles.forEach((tile) => tile.classList.remove("colored"));
+  tiles.forEach((tile) => (tile.style.backgroundColor = "white"));
   createGrid(newSize);
 });
